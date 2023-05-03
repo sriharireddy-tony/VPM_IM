@@ -1,0 +1,395 @@
+<div>
+        <div class="tabs bg-grey">
+            <div class="d-flex">
+                <h6 class="mt-1" (click)="tabclick('PTDInst')" [ngClass]="{'tabBottom':tabClick=='PTDInst'}">PTD
+                    Instrument Request</h6>
+                &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                <h6 class="mt-1" (click)="tabclick('PTDMaster')" [ngClass]="{'tabBottom':tabClick=='PTDMaster'}">PTD
+                    Master</h6>
+                &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                <h6 class="mt-1" (click)="tabclick('PTDDist')" [ngClass]="{'tabBottom':tabClick=='PTDDist'}">PTD
+                    Distribution</h6>
+                &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                <h6 class="mt-1" (click)="tabclick('ECUReq')" [ngClass]="{'tabBottom':tabClick=='ECUReq'}">ECU Request
+                </h6>
+                &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                <h6 class="mt-1" (click)="tabclick('ECUMaster')" [ngClass]="{'tabBottom':tabClick=='ECUMaster'}">ECU
+                    Master</h6>
+                &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                <h6 class="mt-1" (click)="tabclick('ECUDist')" [ngClass]="{'tabBottom':tabClick=='ECUDist'}">ECU
+                    Distribution</h6>
+            </div>
+            <div>
+                <button class="exportBtn">Export Excel</button>
+                <button class="saveBtn  mx-3">Save</button>
+                <button class="exportBtn">Submit</button>
+            </div>
+        </div>
+    <div class="d-flex" *ngIf="tabClick=='PTDInst'">
+        <div class="LRPadding" style="overflow-x:auto">
+            <table class="table table-bordered tstyle" style="table-layout:fixed;">
+                <thead>
+                    <tr>
+                        <th class="first-col"><input type="checkbox" class="form-check-input"></th>
+                        <th class="second-col">S.No</th>
+                        <th style="width:150px">Request Number</th>
+                        <th style="width:150px">Requestor Name</th>
+                        <th style="width:160px">Initiator Token ID</th>
+                        <th style="width:170px">Initiator Mobile No.</th>
+                        <th style="width:170px">Instrument Type</th>
+                        <th style="width:150px">Project</th>
+                        <th style="width:120px">Qty.</th>
+                        <th style="width:160px">Approver</th>
+                        <th style="width:500px">Remarks</th>
+                        <th style="width:140px">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let obj of PTDInst;let i=index">
+                        <td class="first-col">
+                            <i class="pi pi-plus" *ngIf="PTDInst.length-1==i" (click)="PTDInstAddRow()"></i>
+                            <input *ngIf="!(PTDInst.length-1==i)" type="checkbox" class="form-check-input">
+                        </td>
+                        <td class="second-col">{{i+1}}</td>
+                        <td>auto</td>
+                        <td>auto</td>
+                        <td>auto</td>
+                        <td><input type="number" class="form-control"></td>
+                        <td><select class="form-select">
+                            <option value="">Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select></td>
+                        <td><select class="form-select">
+                            <option value="">Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select></td>
+                        <td><input type="number" class="form-control"></td>
+                        <td><select class="form-select">
+                            <option value="">Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="d-flex" *ngIf="tabClick=='PTDMaster'">
+        <div class="LRPadding" style="overflow-x:auto;">
+            <table class="table table-bordered tstyle">
+                <thead>
+                    <tr>
+                        <th class="first-col"><input type="checkbox" class="form-check-input"></th>
+                        <th class="second-col">S.No</th>
+                        <th style="width:150px">Instrument Type</th>
+                        <th style="width:120px">Make</th>
+                        <th style="width:135px">PO Number</th>
+                        <th style="width:130px">Instrument Serial Number</th>
+                        <th style="width:150px">Material Received Date</th>
+                        <th style="width:100px">Project</th>
+                        <th style="width:130px">Project Leader</th>
+                        <th style="width:100px">Issued Qty.</th>
+                        <th style="width:140px">Allotted To</th>
+                        <th style="width:150px">Allotted Person Token ID</th>
+                        <th style="width:150px">Allotted Person Mobile No.</th>
+                        <th style="width:150px">Issued Date</th>
+                        <th style="width:150px">Return Date</th>
+                        <th style="width:100px">Status</th>
+                        <th style="width:400px">Remarks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let obj of PTDMaster;let i=index">
+                        <td class="first-col">
+                            <i class="pi pi-plus" *ngIf="PTDMaster.length-1==i" (click)="PTDMasterAddRow()"></i>
+                            <input *ngIf="!(PTDMaster.length-1==i)" type="checkbox" class="form-check-input">
+                        </td>
+                        <td class="second-col">{{i+1}}</td>
+                        <td><select class="form-select">
+                            <option value="">Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select></td>
+                        <td><select class="form-select">
+                            <option value="">Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select></td>
+                        <td><input type="number" class="form-control"></td>
+                        <td><select class="form-select">
+                            <option value="">Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select></td>
+                        <td><p-calendar [showIcon]="true" inputId="icon" [readonlyInput]="true" dateFormat="dd-mm-yy" placeholder="Select Date" [appendTo]="'body'"></p-calendar></td>
+                        <td>auto</td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="number" class="form-control"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td>auto</td>
+                        <td><input type="number" class="form-control"></td>
+                        <td><p-calendar [showIcon]="true" inputId="icon" [readonlyInput]="true" dateFormat="dd-mm-yy" placeholder="Select Date" [appendTo]="'body'"></p-calendar></td>
+                        <td><p-calendar [showIcon]="true" inputId="icon" [readonlyInput]="true" dateFormat="dd-mm-yy" placeholder="Select Date" [appendTo]="'body'"></p-calendar></td>
+                        <td>auto</td>
+                        <td><input type="text" class="form-control"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="d-flex" *ngIf="tabClick=='PTDDist'">
+        <div class="LRPadding" style="overflow-x:auto;">
+            <table class="table table-bordered tstyle">
+                <thead>
+                    <tr>
+                        <th class="first-col"><input type="checkbox" class="form-check-input"></th>
+                        <th class="second-col">S.No</th>
+                        <th style="width:120px">Request No.</th>
+                        <th style="width:160px">Instrument Make</th>
+                        <th style="width:150px">Instrument Type</th>
+                        <th style="width:140px">Instrument Serial Number</th>
+                        <th style="width:100px">Issued Qty.</th>
+                        <th style="width:100px">Project</th>
+                        <th style="width:140px">Initiator Name</th>
+                        <th style="width:155px">Initiator Token ID</th>
+                        <th style="width:170px">Initiator Mobile No.</th>
+                        <th style="width:130px">Approved By</th>
+                        <th style="width:140px">Approved Date</th>
+                        <th style="width:150px">Issued Date</th>
+                        <th style="width:150px">Return Date</th>
+                        <th style="width:400px">Remarks</th>
+                        <th style="width:100px">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let obj of PTDDist;let i=index">
+                        <td class="first-col">
+                            <i class="pi pi-plus" *ngIf="PTDDist.length-1==i" (click)="PTDDistAddRow()"></i>
+                            <input *ngIf="!(PTDDist.length-1==i)" type="checkbox" class="form-check-input">
+                        </td>
+                        <td class="second-col">{{i+1}}</td>
+                        <td>auto</td>
+                        <td>auto</td>
+                        <td><select class="form-select">
+                            <option value="">Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select></td>
+                        <td><select class="form-select">
+                            <option value="">Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select></td>
+                        <td><input type="number" class="form-control"></td>
+                        <td>auto</td>
+                        <td>auto</td>
+                        <td>auto</td>
+                        <td><input type="number" class="form-control"></td>
+                        <td>auto</td>
+                        <td>auto</td>
+                        <td><p-calendar [showIcon]="true" inputId="icon" [readonlyInput]="true" dateFormat="dd-mm-yy" placeholder="Select Date" [appendTo]="'body'"></p-calendar></td>
+                        <td><p-calendar [showIcon]="true" inputId="icon" [readonlyInput]="true" dateFormat="dd-mm-yy" placeholder="Select Date" [appendTo]="'body'"></p-calendar></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td>auto</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="d-flex" *ngIf="tabClick=='ECUReq'">
+        <div class="LRPadding" style="overflow-x:auto;">
+            <table class="table table-bordered tstyle">
+                <thead>
+                    <tr>
+                        <th class="first-col"><input type="checkbox" class="form-check-input"></th>
+                        <th class="second-col">S.No</th>
+                        <th style="width:140px">Request Number</th>
+                        <th style="width:130px">Initiator Name</th>
+                        <th style="width:150px">Initiator Token ID</th>
+                        <th style="width:133px">Initiator Mobile No.</th>
+                        <th style="width:120px">ECU Type</th>
+                        <th style="width:120px">Project</th>
+                        <th style="width:100px">Qty.</th>
+                        <th style="width:120px">Approver</th>
+                        <th style="width:400px">Remarks</th>
+                        <th style="width:120px">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let obj of ECUReq;let i=index">
+                        <td class="first-col">
+                            <i class="pi pi-plus" *ngIf="ECUReq.length-1==i" (click)="ECUReqAddRow()"></i>
+                            <input *ngIf="!(ECUReq.length-1==i)" type="checkbox" class="form-check-input">
+                        </td>
+                        <td class="second-col">{{i+1}}</td>
+                        <td>auto</td>
+                        <td>auto</td>
+                        <td>auto</td>
+                        <td><input type="number" class="form-control"></td>
+                        <td><select class="form-select">
+                            <option value="">Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select></td>
+                        <td><select class="form-select">
+                            <option value="">Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select></td>
+                        <td><input type="number" class="form-control"></td>
+                        <td>auto</td>
+                        <td><input type="text" class="form-control"></td>
+                        <td>auto</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="d-flex" *ngIf="tabClick=='ECUMaster'">
+        <div class="LRPadding" style="overflow-x:auto;">
+            <table class="table table-bordered tstyle">
+                <thead>
+                    <tr>
+                        <th class="first-col"><input type="checkbox" class="form-check-input"></th>
+                        <th class="second-col">S.No</th>
+                        <th style="width:150px">Instrument Type</th>
+                        <th style="width:120px">Make</th>
+                        <th style="width:120px">PO Number</th>
+                        <th style="width:110px">ECU Serial Number</th>
+                        <th style="width:150px">Material Received Date</th>
+                        <th style="width:120px">Project</th>
+                        <th style="width:140px">Project Leader</th>
+                        <th style="width:120px">Issued Qty.</th>
+                        <th style="width:120px">Allotted To</th>
+                        <th style="width:150px">Allotted Person Token ID</th>
+                        <th style="width:150px">Allotted Person Mobile No.</th>
+                        <th style="width:150px">Issued Date</th>
+                        <th style="width:150px">Return Date</th>
+                        <th style="width:120px">Status</th>
+                        <th style="width:400px">Remarks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let obj of ECUMaster;let i=index">
+                        <td class="first-col">
+                            <i class="pi pi-plus" *ngIf="ECUMaster.length-1==i" (click)="ECUMasterAddRow()"></i>
+                            <input *ngIf="!(ECUMaster.length-1==i)" type="checkbox" class="form-check-input">
+                        </td>
+                        <td class="second-col">{{i+1}}</td>
+                        <td><select class="form-select">
+                            <option value="">Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select></td>
+                        <td><select class="form-select">
+                            <option value="">Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select></td>
+                        <td><input type="number" class="form-control"></td>
+                        <td><select class="form-select">
+                            <option value="">Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select></td>
+                        <td><p-calendar [showIcon]="true" inputId="icon" [readonlyInput]="true" dateFormat="dd-mm-yy" placeholder="Select Date" [appendTo]="'body'"></p-calendar></td>
+                        <td>auto</td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="number" class="form-control"></td>
+                        <td> <input type="text" class="form-control"></td>
+                        <td>auto</td>
+                        <td><input type="number" class="form-control"></td>
+                        <td><p-calendar [showIcon]="true" inputId="icon" [readonlyInput]="true" dateFormat="dd-mm-yy" placeholder="Select Date" [appendTo]="'body'"></p-calendar></td>
+                        <td><p-calendar [showIcon]="true" inputId="icon" [readonlyInput]="true" dateFormat="dd-mm-yy" placeholder="Select Date" [appendTo]="'body'"></p-calendar></td>
+                        <td>auto</td>
+                        <td><input type="text" class="form-control"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="d-flex" *ngIf="tabClick=='ECUDist'">
+        <div class="LRPadding" style="overflow-x:auto;">
+            <table class="table table-bordered tstyle">
+                <thead>
+                    <tr>
+                        <th class="first-col"><input type="checkbox" class="form-check-input"></th>
+                        <th class="second-col">S.No</th>
+                        <th style="width:150px">Request Number</th>
+                        <th style="width:120px">ECU Make</th>
+                        <th style="width:120px">ECU Model</th>
+                        <th style="width:120px">ECU Type</th>
+                        <th style="width:120px">ECU S.No</th>
+                        <th style="width:120px">Issued Qty.</th>
+                        <th style="width:120px">Approved By</th>
+                        <th style="width:150px">Approved Date</th>
+                        <th style="width:120px">Project</th>
+                        <th style="width:140px">Initiator Name</th>
+                        <th style="width:150px">Initiator Token ID</th>
+                        <th style="width:150px">Issued Date</th>
+                        <th style="width:150px">Actual Return Date</th>
+                        <th style="width:400px">Remarks</th>
+                        <th style="width:120px">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let obj of ECUDist;let i=index">
+                        <td class="first-col">
+                            <i class="pi pi-plus" *ngIf="ECUDist.length-1==i" (click)="ECUDistAddRow()"></i>
+                            <input *ngIf="!(ECUDist.length-1==i)" type="checkbox" class="form-check-input">
+                        </td>
+                        <td class="second-col">{{i+1}}</td>
+                        <td>auto</td>
+                        <td>auto</td>
+                        <td><select class="form-select">
+                            <option value="">Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select></td>
+                        <td><select class="form-select">
+                            <option value="">Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select></td>
+                        <td><input type="number" class="form-control"></td>
+                        <td><input type="number" class="form-control"></td>
+                        <td>auto</td>
+                        <td>auto</td>
+                        <td><select class="form-select">
+                            <option value="">Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select></td>
+                        <td>auto</td>
+                        <td>auto</td>
+                        <td><p-calendar [showIcon]="true" inputId="icon" [readonlyInput]="true" dateFormat="dd-mm-yy" placeholder="Select Date" [appendTo]="'body'"></p-calendar></td>
+                        <td><p-calendar [showIcon]="true" inputId="icon" [readonlyInput]="true" dateFormat="dd-mm-yy" placeholder="Select Date" [appendTo]="'body'"></p-calendar></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td>auto</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>

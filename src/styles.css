@@ -1,1 +1,87 @@
 /* You can add global styles to this file, and also import other style files */
+.tabBottom{
+    border-bottom:2px solid red;
+    color: red;
+}
+table>thead>tr>th{
+    text-align: center;
+    caret-color: transparent;
+}
+table>tbody>tr>td{
+    text-align: center;
+    vertical-align: middle;
+}
+.LRPadding{
+    padding-left: 25px;
+    padding-right: 25px;
+}
+table>tbody>tr>td>select{
+    border:none !important;
+}
+table>tbody>tr>td>input[type="text"]{
+    border:none !important;
+}
+table>tbody>tr>td>input[type="number"]{
+    border:none !important;
+}
+table>tbody>tr>td{
+ padding: 0px !important;
+}
+input:focus {
+    outline: none !important;
+  }
+select:focus {
+    outline: none !important;
+  }
+  table>thead>tr{
+    color: white;
+    background-color: red;
+  }
+  .pi{
+    cursor: pointer !important;
+  }
+  .p-datepicker table td {
+    padding: 0rem !important;
+}
+.p-datepicker table td > span.p-highlight {
+    color: white !important;
+    background: red !important;
+}
+.p-datepicker .p-datepicker-header {
+    padding: 0rem !important;
+}
+.p-datepicker table td > span {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    border-radius: 0% !important;
+}
+.p-datepicker .p-datepicker-header .p-datepicker-title {
+    line-height: 1rem !important;
+    color: black;
+    background-color: #fef4dd;
+}
+.p-datepicker:not(.p-datepicker-inline) .p-datepicker-header {
+    background: #fef4dd !important;
+}
+.p-calendar {
+    width: 100% !important;
+    height: 38px !important;
+}
+.p-button {
+    color: black !important;
+    background: transparent !important;
+    border-right: none !important;
+}
+.p-datepicker table tr {
+   color: black !important;
+   background-color: white !important;
+}
+.p-button.p-button-icon-only{
+    width :30px !important;
+}
+.p-calendar-w-btn .p-inputtext{
+    border: none;
+}
+.p-calendar-w-btn .p-datepicker-trigger{
+    border:none;
+}

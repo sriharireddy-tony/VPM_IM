@@ -1,0 +1,66 @@
+.tabs{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    height: 62px;
+}
+.tabs div h6{
+    cursor: pointer;
+    caret-color: transparent;
+}
+/* .tstyle td:first-child{
+    position: sticky;
+    left: 0;
+    background-color: #ddd;
+}
+.tstyle th:first-child{
+    position: sticky;
+    left: 0;
+    background-color: #ddd;
+} */
+.tstyle{
+    width: 100%;
+}
+.tstyle .first-col{
+    position: sticky;
+    left: 0;
+    min-width: 30px;
+    width: 30px;
+   
+}
+.tstyle .second-col{
+    position: sticky;
+    left: 30px;
+    width: 50px;
+    min-width: 50px;
+  
+}
+.tstyle td:nth-child(1),
+.tstyle td:nth-child(2){
+    background-color: #ddd;
+    color: black;
+}
+.tstyle th:nth-child(1),
+.tstyle th:nth-child(2){
+    background-color:red;
+    color: white;
+     z-index: 3;
+}
+.exportBtn{
+    border: none;
+    background: red;
+    color: white;
+    border-radius: 4px;
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.saveBtn{
+    border: 2px solid red;
+    background-color: white;
+    color: red;
+    padding-left: 20px;
+    padding-right: 20px;
+}

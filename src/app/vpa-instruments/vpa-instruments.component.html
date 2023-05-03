@@ -1,0 +1,204 @@
+<div>
+    <div class="col-lg-12 d-flex">
+        <div class="col-lg-1"></div>
+        <div class="tabs col-lg-10 bg-grey">
+            <div class="d-flex"> 
+                <h6 class="mt-1" (click)="tabclick('order')" [ngClass]="{'tabBottom':tabClick=='order'}">Instruments Order</h6>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                <h6 class="mt-1" (click)="tabclick('master')" [ngClass]="{'tabBottom':tabClick=='master'}">Master Data</h6>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                <h6 class="mt-1" (click)="tabclick('request')" [ngClass]="{'tabBottom':tabClick=='request'}">Instrument Request</h6>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                <h6 class="mt-1" (click)="tabclick('distribution')" [ngClass]="{'tabBottom':tabClick=='distribution'}">Instrument Distribution</h6>
+              </div>
+              <div>
+                <button class="exportBtn mx-3">Export Excel</button>
+                <button class="saveBtn">Save</button>
+              </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="col-lg-12 d-flex" *ngIf="tabClick=='order'">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10" style="overflow-x:auto;">
+    <table class="table table-bordered tstyle" style="table-layout:fixed;">
+        <thead>
+            <tr style="color:white;background-color: red;">
+                <th class="first-col"><input type="checkbox" class="form-check-input"></th>
+                <th class="second-col">S.No</th>
+                <th style="width:100px">Asset Type</th>
+                <th style="width:150px">Instrument Type</th>
+                <th style="width:100px">Make</th>
+                <th style="width:140px">Project Name</th>
+                <th style="width:100px">Order QTY.</th>
+                <th style="width:100px">WBS Code</th>
+                <th style="width:120px">Cost in EURO   (per Unit)</th>
+                <th style="width:120px">Cost in INR   (per Unit)</th>
+                <th style="width:150px">Requisition Total value in INR</th>
+                <th style="width:140px" >Requisition No.</th>
+                <th style="width:145px">Requisition Date</th>
+                <th style="width:165px">submit to purchase Team Date</th>
+                <th style="width:120px">Buyer Name</th>
+                <th style="width:110px">PO Number</th>
+                <th style="width:100px">PO Date</th>
+                <th style="width:110px">PO Amount in EURO</th>
+                <th style="width:110px">PO Amount in INR</th>
+                <th style="width:115px">Target Date</th>
+                <th style="width:130px">Received Date</th>
+                <th style="width:100px">PUC Status</th>
+                <th style="width:100px">Status</th>
+                <th style="width:100px">Remarks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="first-col"><input type="checkbox" class="form-check-input"></td>
+                <td class="second-col"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+
+    </table>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="col-lg-12 d-flex" *ngIf="tabClick=='master'">
+<div class="col-lg-1"></div>
+<div class="col-lg-10">
+<table class="table table-bordered">
+<thead>
+    <tr style="background-color: red;color:white">
+        <th><input type="checkbox" class="form-check-input"></th>
+        <th>S.No</th>
+        <th>Asset Type</th>
+        <th>PO Number</th>
+        <th>Make</th>
+        <th>Instrumental Serial No.</th>
+        <th>Total Qty.</th>
+        <th>Received Date</th>
+        <th>Calibration/Licence Due Date</th>
+        <th>Status</th>
+        <th>Remarks</th>
+        <th>Documents</th>
+    </tr>
+</thead>
+<tbody>
+    <tr >
+        <td><input type="checkbox" class="form-check-input"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+       <td></td>
+       <td></td>
+    </tr>
+</tbody>
+</table>
+</div>
+<div class="col-lg-1"></div>
+    </div>
+    <div class="col-lg-12 d-flex" *ngIf="tabClick=='request'">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+        <table class="table table-bordered">
+        <thead>
+            <tr style="background-color: red;color:white">
+                <th><input type="checkbox" class="form-check-input"></th>
+                <th>S.No</th>
+                <th>Job Order Number</th>
+                <th>Instruments Types</th>
+                <th>Return Date</th>
+                <th>Fitment Type</th>
+                <th>Remarks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr >
+                <td><input type="checkbox" class="form-check-input"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+        </table>
+        </div>
+        <div class="col-lg-1"></div>
+            </div>
+            <div class="col-lg-12 d-flex" *ngIf="tabClick=='distribution'">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10" style="overflow-x:auto;">
+            <table class="table table-bordered tstyle">
+                <thead>
+                    <tr style="color:white;background-color: red;">
+                        <th class="first-col"><input type="checkbox" class="form-check-input"></th>
+                        <th class="second-col">S.No</th>
+                        <th>Job Order Number</th>
+                        <th>Issued Date</th>
+                        <th>Instrument Type</th>
+                        <th>Instrument Serial No.</th>
+                        <th>Issued Qty.</th>
+                        <th>Project Code</th>
+                        <th>Vehicle Body No.</th>
+                        <th>Initaitor Name</th>
+                        <th>Initaitor Token ID</th>
+                        <th>Initiator Mobile Number</th>
+                        <th>Fitment Type</th>
+                        <th>Expected Return Date</th>
+                        <th>Status</th>
+                        <th>Document</th>
+                        <th>Remarks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="first-col"><input type="checkbox" class="form-check-input"></td>
+                        <td class="second-col"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+        
+            </table>
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+</div>

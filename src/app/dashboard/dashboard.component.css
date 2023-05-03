@@ -1,0 +1,41 @@
+.tabs{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.tabs div h6{
+    cursor: pointer;
+    caret-color: transparent;
+}
+/* .tstyle td:first-child{
+    position: sticky;
+    left: 0;
+    background-color: #ddd;
+}
+.tstyle th:first-child{
+    position: sticky;
+    left: 0;
+    background-color: #ddd;
+} */
+.tstyle{
+    width: 100%;
+    table-layout:fixed;
+}
+.exportBtn{
+    border: none;
+    background: red;
+    color: white;
+    border-radius: 4px;
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.saveBtn{
+    border: 2px solid red;
+    background-color: white;
+    color: red;
+    padding-left: 20px;
+    padding-right: 20px;
+}

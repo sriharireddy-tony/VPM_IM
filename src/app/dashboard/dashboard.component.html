@@ -1,0 +1,278 @@
+<div>
+    <div class="tabs LRPadding d-flex">
+        <div class="d-flex">
+            <h6 class="mt-1" (click)="tabclick('IS')" [ngClass]="{'tabBottom':tabClick=='IS'}">Instrument Summary</h6>
+            &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            <h6 class="mt-1" (click)="tabclick('PTDS')" [ngClass]="{'tabBottom':tabClick=='PTDS'}">PTD Summary</h6>
+            &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            <h6 class="mt-1" (click)="tabclick('PTDPW')" [ngClass]="{'tabBottom':tabClick=='PTDPW'}">PTD Project wise
+            </h6>
+            &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            <h6 class="mt-1" (click)="tabclick('ECUS')" [ngClass]="{'tabBottom':tabClick=='ECUS'}">ECU Summary</h6>
+            &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            <h6 class="mt-1" (click)="tabclick('ECUPW')" [ngClass]="{'tabBottom':tabClick=='ECUPW'}">ECU Project wise
+            </h6>
+            &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            <h6 class="mt-1" (click)="tabclick('FLS')" [ngClass]="{'tabBottom':tabClick=='FLS'}">Fleet Logger Summary
+            </h6>
+            &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            <h6 class="mt-1" (click)="tabclick('FLPW')" [ngClass]="{'tabBottom':tabClick=='FLPW'}">Fleet Logger Project
+                wise</h6>
+        </div>
+        <div>
+            <button class="exportBtn">Export Excel</button>
+        </div>
+    </div>
+    <div class="d-flex" *ngIf="tabClick=='IS'">
+        <div class="LRPadding">
+            <table class="table table-bordered tstyle">
+                <thead>
+                    <tr>
+                        <th rowspan="2" style="width:30px"><input type="checkbox" class="form-check-input"></th>
+                        <th rowspan="2" style="width:50px">S.No</th>
+                        <th rowspan="2">Instrument Make</th>
+                        <th rowspan="2">Instrument Type</th>
+                        <th rowspan="2">Total Qty.</th>
+                        <th colspan="2" style="width:190px">Issued Qty.</th>
+                        <th rowspan="2">Available Qty.</th>
+                        <th rowspan="2">Damage</th>
+                        <th rowspan="2" style="width:160px">Not tracable / Lost</th>
+
+                    </tr>
+                    <tr>
+                        <!-- <th style="width:30px"><input type="checkbox" class="form-check-input"></th>
+                        <th  style="width:50px">S.No</th>
+                        <th>Instrument Make</th>
+                        <th>Instrument Type</th>
+                        <th>Total Qty.</th> -->
+                        <th>On Track</th>
+                        <th>Over Due</th>
+                        <!-- <th>Available Qty.</th>
+                        <th>Damage</th>
+                        <th>Not tracable / Lost</th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" class="form-check-input"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+    <div class="d-flex" *ngIf="tabClick=='PTDS'">
+        <div class="LRPadding">
+            <table class="table table-bordered tstyle">
+                <thead>
+                    <tr style="color:white;background-color: red;">
+                        <th style="width:30px"><input type="checkbox" class="form-check-input"></th>
+                        <th style="width:50px">S.No</th>
+                        <th>Instrument Make</th>
+                        <th>Instrument Type</th>
+                        <th>Total Qty.</th>
+                        <th>Issued Qty.</th>
+                        <th>Available Qty.</th>
+                        <th>Damage</th>
+                        <th>Not tracable / Lost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" class="form-check-input"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+    <div class="d-flex" *ngIf="tabClick=='PTDPW'">
+        <div class="LRPadding">
+            <table class="table table-bordered tstyle">
+                <thead>
+                    <tr style="color:white;background-color: red;">
+                        <th style="width:30px"><input type="checkbox" class="form-check-input"></th>
+                        <th style="width:50px">S.No</th>
+                        <th>Instrument Make</th>
+                        <th>Instrument Type</th>
+                        <th>Total Qty.</th>
+                        <th>Issued Qty.</th>
+                        <th>Available Qty.</th>
+                        <th>Damage</th>
+                        <th>Not tracable / Lost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" class="form-check-input"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+    <div class="d-flex" *ngIf="tabClick=='ECUS'">
+        <div class="LRPadding">
+            <table class="table table-bordered tstyle">
+                <thead>
+                    <tr style="color:white;background-color: red;">
+                        <th style="width:30px"><input type="checkbox" class="form-check-input"></th>
+                        <th style="width:50px">S.No</th>
+                        <th>Instrument Make</th>
+                        <th>Instrument Type</th>
+                        <th>Total Qty.</th>
+                        <th>Issued Qty.</th>
+                        <th>Available Qty.</th>
+                        <th>Damage</th>
+                        <th>Not tracable / Lost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" class="form-check-input"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+    <div class="d-flex" *ngIf="tabClick=='ECUPW'">
+        <div class="LRPadding">
+            <table class="table table-bordered tstyle">
+                <thead>
+                    <tr style="color:white;background-color: red;">
+                        <th style="width:30px"><input type="checkbox" class="form-check-input"></th>
+                        <th style="width:50px">S.No</th>
+                        <th>Instrument Make</th>
+                        <th>Instrument Type</th>
+                        <th>Total Qty.</th>
+                        <th>Issued Qty.</th>
+                        <th>Available Qty.</th>
+                        <th>Damage</th>
+                        <th>Not tracable / Lost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" class="form-check-input"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+    <div class="d-flex" *ngIf="tabClick=='FLS'">
+        <div class="LRPadding">
+            <table class="table table-bordered tstyle">
+                <thead>
+                    <tr style="color:white;background-color: red;">
+                        <th style="width:30px"><input type="checkbox" class="form-check-input"></th>
+                        <th style="width:50px">S.No</th>
+                        <th>Instrument Make</th>
+                        <th>Instrument Type</th>
+                        <th>Total Qty.</th>
+                        <th>On Track</th>
+                        <th>Over Due</th>
+                        <th>Available Qty.</th>
+                        <th>Damage</th>
+                        <th style="width:160px;">Not tracable / Lost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" class="form-check-input"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+    <div class="d-flex" *ngIf="tabClick=='FLPW'">
+        <div class="LRPadding">
+            <table class="table table-bordered tstyle">
+                <thead>
+                    <tr style="color:white;background-color: red;">
+                        <th rowspan="2" style="width:30px"><input type="checkbox" class="form-check-input"></th>
+                        <th rowspan="2" style="width:50px">S.No</th>
+                        <th rowspan="2">Instrument Make</th>
+                        <th rowspan="2">Instrument Type</th>
+                        <th rowspan="2">Total Qty.</th>
+                        <th colspan="2" style="width:190px">Issued Qty.</th>
+                        <th rowspan="2">Available Qty.</th>
+                        <th rowspan="2">Damage</th>
+                        <th rowspan="2" style="width:160px;">Not tracable / Lost</th>
+                    </tr>
+                    <tr>
+                        <th>On Track</th>
+                        <th>Over Due</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" class="form-check-input"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
